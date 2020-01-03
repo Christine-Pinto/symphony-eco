@@ -336,9 +336,9 @@ li.creativity .piesite > #slice > .pie {
     z-index: 0;
 }
 
-.piesite:before {
+/* .piesite:before {
     background: rgba(255, 255, 255, 0.1);
-}
+} */
 
 .box-piesite ul {
     padding: 0;
@@ -378,7 +378,6 @@ li.creativity .piesite > #slice > .pie {
     position: absolute;
     background: none repeat scroll 0 0 #222;
     color: #F0B015;
-    font-family: 'Helvetica';
     font-size: 0.8em;
     font-weight: normal;
     line-height: 1.5em;

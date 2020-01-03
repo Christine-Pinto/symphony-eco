@@ -2,10 +2,6 @@
   box-sizing: border-box;
 }
 
-body {
-   font-family: "Homemade Apple";
-}
-
 .row {
   width:100%
 }
@@ -22,7 +18,7 @@ body {
 	border: 16px solid transparent;
 	border-image: 16 repeating-linear-gradient(-45deg, red 0, red 1em, transparent 0, transparent 2em,
 	              #58a 0, #58a 3em, transparent 0, transparent 4em);
-  	/* -webkit-mask-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/8399/grunge.png'); */
+  	-webkit-mask-image: url('./images/grunge.png');
   -webkit-mask-size: 944px 604px;
 	
 	font: 100%/1.6 Baskerville, Palatino, serif;
@@ -30,11 +26,7 @@ body {
 
 p {
   display: inline;
-  font-size: 0.7em;
-}
-
-a {
-  font-family: "Abril Fatface", sans-serif;
+  font-size: 0.7rem;
 }
 
 /*form*/
@@ -43,10 +35,9 @@ textarea {
   background-color: transparent;
   border: none;
   border-radius: 4%;
-  height: 1.9em;
+  height: 1.9rem;
   width:100%;
-  font-size: 1.5em;
-  font-family: "Homemade Apple";
+  font-size: 1.5rem;
 }
 
 input:focus,
@@ -160,3 +151,77 @@ input.btn-send {
   font-size: 0.7rem;
   color: red;
 }
+
+.send-message {
+  cursor: pointer; }
+  .send-message.open {
+    background: none;
+    text-align: left;
+    border-radius: 5px;
+    cursor: default; }
+    .send-message.open .back {
+      opacity: 1;
+      transform: rotateY(0deg);
+      height: auto; }
+    .send-message.open .front {
+      opacity: 0;
+      transform: rotateY(180deg) }
+  .send-message .button-copy {
+    text-align: center;
+    line-height: 144px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #f717f7; }
+  .send-message form {
+    opacity: 0;
+   }
+  .send-message .cancel {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 1rem; }
+    .send-message .cancel span {
+      cursor: pointer; }
+      .send-message .cancel span:hover {
+        text-decoration: underline; }
+
+.send-message .back , .send-message .front {
+transition-timing-function: cubic-bezier(.175, .885, .32, 1.275);
+transition-duration: .5s;
+transition-property: transform, opacity;
+border-radius: 5px;
+}       
+.send-message .front {
+  opacity: 1;
+  transform: rotateY(0deg);
+  background-image: url("https://source.unsplash.com/_w7CkrJdn1Q/600x300");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 75vh;
+}
+.send-message .back {
+  opacity: 0;
+  transform: rotateY(-180deg);
+}
+
+.submit-button {
+  display: block;
+  background-color: #3498DB;
+  height: 40px;
+  border-radius: 20px;
+  line-height: 36px;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  border: none;
+  font-weight: 700;
+  padding: 0 34px;
+  margin: 0 auto; }
+  .submit-button img {
+    position: relative;
+    top: 3px;
+    right: 6px; }
+  .submit-button:hover {
+    background-color: #217dbb;
+    cursor: pointer; }
+

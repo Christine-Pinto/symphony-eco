@@ -11,56 +11,73 @@ function scrollFunction() {
   }
 }
 
-$(".navbar-toggler").click(function() {
-  // toggle the class after half second
-  setTimeout(function() {
-    $(".navbar-collapse").toggleClass("show");
-  }, 200);
-});
+
+// Service Overview Slider
+$(document).ready(function() {
+
+  var $slider = $(".slider__warpper"),
+  curSlide = 1,
+  numOfSlides = 5,
+  autoSlideTimeout,
+  autoSlideDelay = 3000;
+
+function autoSlider() {
+  autoSlideTimeout = setTimeout(function() {
+    window.clearTimeout(autoSlideTimeout);
+    var current = $('.flex--active').data('slide');
+    curSlide=current;
+    curSlide++;
+    if (curSlide > numOfSlides) curSlide = 1;
+    // get current slide
+    
+    // get button data-slide
+    next = curSlide;
+  
+    $('.slide-nav').removeClass('active');
+    $('.slider__navi').find('.slide-nav[data-slide=' + next + ']').addClass('active');
+  
+
+      $('.slider__warpper').find('.flex__container[data-slide=' + next + ']').addClass('flex--preStart');
+      $('.flex--active').addClass('animate--end');
+      setTimeout(function() {
+        $('.flex--preStart').removeClass('animate--start flex--preStart').addClass('flex--active');
+        $('.animate--end').addClass('animate--start').removeClass('animate--end flex--active');
+      }, 800);
+      
+  }, autoSlideDelay);
+};
+
+autoSlider();
 
 
-//Isotope Filter Grid
-$('.grid').isotope({
-  // options
-  itemSelector: '.grid-item',
-  layoutMode: 'fitRows'
+$('.slide-nav').on('click', function(e) {
+  e.preventDefault(e);
+  window.clearTimeout(autoSlideTimeout);
+    // get current slide
+    var current = $('.flex--active').data('slide'),
+    // get button data-slide
+    next = $(this).data('slide');
+
+  $('.slide-nav').removeClass('active');
+  $(this).addClass('active');
+
+  if (current === next) {
+    return false;
+  } else {
+    $('.slider__warpper').find('.flex__container[data-slide=' + next + ']').addClass('flex--preStart');
+    $('.flex--active').addClass('animate--end');
+    setTimeout(function() {
+      $('.flex--preStart').removeClass('animate--start flex--preStart').addClass('flex--active');
+      $('.animate--end').addClass('animate--start').removeClass('animate--end flex--active');
+    }, 800);
+  }
+  autoSlider();
 });
 
-var elem = document.querySelector('.grid');
-var iso = new Isotope( elem, {
-  // options
-  itemSelector: '.grid-item',
-  layoutMode: 'fitRows'
-});
+setInterval(function() {
+  autoSlider();
+}, autoSlideDelay)
 
-// element argument can be a selector string
-//   for an individual element
-var iso = new Isotope( '.grid', {
-  // options
-});
+;
 
-// init Isotope
-var $grid = $('.grid').isotope({
-  // options
-});
-// filter items on button click
-$('.filter-button-group').on( 'click', 'button', function() {
-  var filterValue = $(this).attr('data-filter');
-  $grid.isotope({ filter: filterValue });
-});
-
-// bind filter button click
-$('.filters-button-group').on( 'click', 'button', function() {
-  var filterValue = $( this ).attr('data-filter');
-  // use filterFn if matches value
-  filterValue = filterFns[ filterValue ] || filterValue;
-  $grid.isotope({ filter: filterValue });
-});
-// change is-checked class on buttons
-$('.button-group').each( function( i, buttonGroup ) {
-  var $buttonGroup = $( buttonGroup );
-  $buttonGroup.on( 'click', 'button', function() {
-    $buttonGroup.find('.is-checked').removeClass('is-checked');
-    $( this ).addClass('is-checked');
-  });
 });
