@@ -1,0 +1,227 @@
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  width:100%
+}
+
+.postcard {
+  width: 100%;
+  height: 35%;
+  background-color: #fcf0dc;
+  color: black;
+  background-image: url("./images/green-dust-and-scratches.png");
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+	border: 16px solid transparent;
+	border-image: 16 repeating-linear-gradient(-45deg, red 0, red 1em, transparent 0, transparent 2em,
+	              #58a 0, #58a 3em, transparent 0, transparent 4em);
+  	-webkit-mask-image: url('./images/grunge.png');
+  -webkit-mask-size: 944px 604px;
+	
+	font: 100%/1.6 Baskerville, Palatino, serif;
+}
+
+p {
+  display: inline;
+  font-size: 0.7rem;
+}
+
+/*form*/
+input,
+textarea {
+  background-color: transparent;
+  border: none;
+  border-radius: 4%;
+  height: 1.9rem;
+  width:100%;
+  font-size: 1.5rem;
+}
+
+input:focus,
+textarea:focus {
+   outline-color: pink;
+}
+
+.mail_stamp {
+  transform: rotate(1deg);
+  width: 14rem;
+  float: right;
+  margin-bottom: 5%;
+  position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+}
+.mail_stamp2 {
+  transform: rotate(2deg);
+  width: 11.3rem;
+  float: right;
+  margin-bottom: 5%;
+  position: absolute;
+    top: 1rem;
+    right: 22rem;
+}
+
+.mail_stamp3 {
+  transform: rotate(2deg);
+  width: 13rem;
+  float: right;
+  margin-bottom: 5%;
+  position: absolute;
+    top: 0.5rem;
+    right: 10rem;
+}
+.mail_stamp4 {
+  transform: rotate(2deg);
+  width: 10rem;
+  float: right;
+  margin-bottom: 5%;
+  position: absolute;
+    top: 3.5rem;
+    right: 11rem;
+}
+
+.whale-stamp {
+  transform: rotate(2deg);
+  width: 25rem;
+  float: left;
+  margin-bottom: 5%;
+  position: absolute;
+    bottom: 1.5rem;
+    left: 3rem;
+  opacity: 0.3;
+}
+
+
+.address form input , .address input {
+  margin-top: 14%;
+  border-bottom: dashed 2px #41403E;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  
+}
+
+.line-right {
+  border-right: dashed 2px #41403E;
+}
+
+textarea {
+  transform: rotate(-1deg);
+  overflow: auto;
+  resize: none;
+  height: 18em;
+  width: 100%;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+.push{
+  margin-bottom: 1em;
+  margin-top: .5em;
+}
+
+.social a {
+    transition: all .3s ease;
+    text-decoration: none;
+    padding-left: 1rem;
+}
+
+.social {
+  padding-top:2%;
+}
+
+input.btn-send {
+  height: auto;
+  width: auto;
+}
+
+.btn-success.disabled, .btn-success:disabled, .btn-send {
+  background: none;
+  border: 1px solid black;
+  color: black;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  -webkit-transition: color 0.3s,background 0.3s;
+  transition: color 0.3s,background 0.3s;
+}
+
+.with-errors {
+  font-size: 0.7rem;
+  color: red;
+}
+
+.send-message {
+  cursor: pointer; }
+  .send-message.open {
+    background: none;
+    text-align: left;
+    border-radius: 5px;
+    cursor: default; }
+    .send-message.open .back {
+      opacity: 1;
+      transform: rotateY(0deg);
+      height: auto; }
+    .send-message.open .front {
+      opacity: 0;
+      transform: rotateY(180deg) }
+  .send-message .button-copy {
+    text-align: center;
+    line-height: 144px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #f717f7; }
+  .send-message form {
+    opacity: 0;
+   }
+  .send-message .cancel {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 1rem; }
+    .send-message .cancel span {
+      cursor: pointer; }
+      .send-message .cancel span:hover {
+        text-decoration: underline; }
+
+.send-message .back , .send-message .front {
+transition-timing-function: cubic-bezier(.175, .885, .32, 1.275);
+transition-duration: .5s;
+transition-property: transform, opacity;
+border-radius: 5px;
+}       
+.send-message .front {
+  opacity: 1;
+  transform: rotateY(0deg);
+  background-image: url("https://source.unsplash.com/_w7CkrJdn1Q/600x300");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 75vh;
+}
+.send-message .back {
+  opacity: 0;
+  transform: rotateY(-180deg);
+}
+
+.submit-button {
+  display: block;
+  background-color: #3498DB;
+  height: 40px;
+  border-radius: 20px;
+  line-height: 36px;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  border: none;
+  font-weight: 700;
+  padding: 0 34px;
+  margin: 0 auto; }
+  .submit-button img {
+    position: relative;
+    top: 3px;
+    right: 6px; }
+  .submit-button:hover {
+    background-color: #217dbb;
+    cursor: pointer; }
+

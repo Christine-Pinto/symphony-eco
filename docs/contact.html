@@ -1,0 +1,209 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Symphony Eco</title>
+    <meta name="description" content="Symphony Eco">
+    <meta name="author" content="Christine Zierold and Aaron Pinto">
+    <meta name="keywords" content="Consulting; Conservation;">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image" content="assets/images/wordcloud.png"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/flexslider.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./assets/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/fontawesome-free-5.10.1-web/css/all.css">
+    <link href="./assets/graph.css" rel="stylesheet">
+    <link href="./assets/pie.css" rel="stylesheet">
+    <link href="./assets/custom.css" rel="stylesheet">
+    <link href="./assets/postcard.css" rel="stylesheet">
+</head>
+<body id="contact-header">
+    <nav class="navbar navbar-expand-lg fixed-top custom-nav" id="navbar">
+        <div class="container">
+            <a class="navbar-brand logo" href="index.html">
+                <!-- space for logo -->
+            </a>
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars mdi mdi-menu"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item ">
+                        <a href="index.html#" class="nav-link">
+                        <i  class="fas fa-igloo fa-1x pr-2"></i>
+                        Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html#"  class="nav-link">
+                            <i  class="fas fa-id-card-alt fa-1x pr-2"></i>  
+                            About
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="service.html#"  class="nav-link">
+                            <i  class="fas fa-tools fa-1x pr-2"></i>  
+                            Services
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="blog.html#"  class="nav-link">
+                            <i class="fas fa-blog fa-1x pr-2"></i>  
+                            Blog
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html#" class="nav-link">
+                            <i class="fas fa-paper-plane fa-1x pr-2"></i> 
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<section class="contact" >
+  <div class="section-padding">
+    <div class="container contact pt-2">
+      <div class="row" style="text-align: -webkit-center;">
+          <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12 offset-lg-1 offset-md-1" >
+              <div class="box">
+                <div class="container" id="app">
+                    <div class="send-message" :class="{'open': formOpen}">
+                        <div class="col-lg-12 col-md-12 col-sm-112 col-xs-12  button-copy front" v-show="!formOpen" @click="formOpen = true">Contact Us</div>
+                        <form id="contact-form" method="post" action="contact.php" role="form" class="back" >
+                        <div class="messages"></div>
+                        <div class="controls">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color: #fcf0dc; padding:0;">
+                                        <div class="postcard" >
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Wildlife_Conservation_Polar_Bear_8c_1971_issue_U.S._stamp.jpg/800px-Wildlife_Conservation_Polar_Bear_8c_1971_issue_U.S._stamp.jpg" class="mail_stamp">
+                                        <img src="./assets/images/envelope-stamp.png" class="mail_stamp2"> 
+                                        <img src="./assets/images/postage-stamp.png" class="mail_stamp3">
+                                        <img src="./assets/images/notary-seal.png" class="mail_stamp4">               
+                                        <img src="./assets/images/beluga-whale.png" class="whale-stamp">               
+
+                                        <div class="row ">
+                                            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 line-right">
+                                                <div class="box">
+                                                    <div class = "letter"  >
+                                                        <form action="#" method="post" class="message_form" @submit="cancel()">
+                                                        <div class="form-group">
+                                                            <textarea id="form_message" name="message" placeholder="Your Message" rows="4" required="required"
+                                                                data-error="Please, leave us a message." v-model="addressData.message"></textarea>
+                                                            <div class="help-block with-errors"></div>
+                                                        </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12" style="padding-top:15%;">
+                                                <div class="row">
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
+                                                        <div class="box address">
+                                                            <div class="form-group address">
+                                                                <input id="form_name" type="text" name="name" placeholder="Your Name" required="required"
+                                                                    data-error="Name is required." v-model="addressData.name">
+                                                                <div class="help-block with-errors"></div>
+                                                            </div>
+                                                            <div class="form-group address">
+                                                                <input id="form_email" type="email" name="email" placeholder="Your Email" required="required"
+                                                                    data-error="Valid email is required." v-model="addressData.email">
+                                                                <div class="help-block with-errors"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-12 col-md-12 col-lg-12 text-center">
+                                                        <div class="box">
+                                                                <div class="social mt-4">
+                                                                        <a href="https://www.facebook.com/SymphonyEco">
+                                                                            <i style="color:black;" class="fab fa-facebook fa-3x"></i>
+                                                                        </a>
+                                                                        <a href="https://www.instagram.com/symphony.eco/">
+                                                                            <i style="color:black;" class="fab fa-instagram fa-3x"></i>
+                                                                        </a>
+                                                                        <a href="https://twitter.com/SymphonyEco">
+                                                                            <i style="color:black;" class="fab fa-twitter-square fa-3x"></i>
+                                                                        </a>
+                                                                </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-12 col-md-12 col-lg-12 text-center mt-3">
+                                                        <div class="row">
+                                                            <div class="form-group">
+                                                                <div class="g-recaptcha" data-sitekey="6Lc2_MsUAAAAAIB2mOVb_l42e4WeVVnIvcbVF48O" data-callback="verifyRecaptchaCallback" data-expired-callback="expiredRecaptchaCallback"></div>
+                                                                <input class="form-control d-none" data-recaptcha="true" required data-error="Please complete the Captcha">
+                                                                <div class="help-block with-errors"></div>
+                                                            </div>
+                                                            <div class="col-xs-12 col-md-12 col-lg-8 text-center">
+                                                                <div class="box"></div>
+                                                                <div><input type="submit" class="btn btn-success btn-send" value="Send message"></div>
+                                                                
+                                                            </div>
+                                                            <div class="col-xs-12 col-md-12 col-lg-4 text-center">
+                                                                <div class="box"></div>
+                                                                <div class="cancel"><span @click="cancel()">Cancel</span></div>
+                                                                </div>
+                                                            <div class="w-100"></div>
+                                                            <div class="col-xs-12 col-md-12 col-lg-11">
+                                                                <div class="box"></div>
+                                                                <p class="text-muted" style="margin-top: 5px;">
+                                                                    <strong>*</strong> These fields are required. Contact form template by
+                                                                    <a href="https://bootstrapious.com/p/bootstrap-recaptcha" target="_blank">Bootstrapious</a>.
+                                                                </p>                                                                      </div>                                                                    
+                                                            </div>
+                                                        </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>   
+  </div>              
+ </section>
+<!--end of Header-->
+
+ <!-- Bootstrap core JavaScript -->
+ <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
+ <script src="./assets/validator.js"></script>
+ <script src="./assets/contact.js"></script>
+ <script src="./assets/custom.js"></script>
+ <script id="rendered-js">
+    var vue = new Vue({
+      el: '#app',
+      data: {
+      formOpen: false,
+      addressData: {
+      name: '',
+      email: '',
+      message: ''} },
+
+
+      methods: {
+      resetForm: function () {
+      this.addressData = {
+        name: '',
+        email: '',
+        message: ''};
+      },
+      cancel: function () {
+      this.formOpen = false;
+      this.resetForm();
+      } } });
+          //# sourceURL=pen.js
+        </script>
+</body>
+</html>
