@@ -11,14 +11,13 @@
     <meta property="og:image" content="assets/images/wordcloud.png"/>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/flexslider.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./assets/bootstrap.min.css">
-    <link rel="stylesheet" href="./assets/fontawesome-free-5.10.1-web/css/all.css">
-    <link href="./assets/graph.css" rel="stylesheet">
-    <link href="./assets/pie.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.0.3/nouislider.min.css" />
+    <link href="./assets/contact.css" rel="stylesheet">
     <link href="./assets/custom.css" rel="stylesheet">
-    <link href="./assets/postcard.css" rel="stylesheet">
+
 </head>
-<body id="contact-header">
+<body class=" h-100">
     <nav class="navbar navbar-expand-lg fixed-top custom-nav" id="navbar">
         <div class="container">
             <a class="navbar-brand logo" href="index.html">
@@ -63,147 +62,247 @@
             </div>
         </div>
     </nav>
-<section class="contact" >
-  <div class="section-padding">
-    <div class="container contact pt-2">
-      <div class="row" style="text-align: -webkit-center;">
-          <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12 offset-lg-1 offset-md-1" >
-              <div class="box">
-                <div class="container" id="app">
-                    <div class="send-message" :class="{'open': formOpen}">
-                        <div class="col-lg-12 col-md-12 col-sm-112 col-xs-12  button-copy front" v-show="!formOpen" @click="formOpen = true">Contact Us</div>
-                        <form id="contact-form" method="post" action="contact.php" role="form" class="back" >
-                        <div class="messages"></div>
-                        <div class="controls">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color: #fcf0dc; padding:0;">
-                                        <div class="postcard" >
-                                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Wildlife_Conservation_Polar_Bear_8c_1971_issue_U.S._stamp.jpg/800px-Wildlife_Conservation_Polar_Bear_8c_1971_issue_U.S._stamp.jpg" class="mail_stamp">
-                                        <img src="./assets/images/envelope-stamp.png" class="mail_stamp2"> 
-                                        <img src="./assets/images/postage-stamp.png" class="mail_stamp3">
-                                        <img src="./assets/images/notary-seal.png" class="mail_stamp4">               
-                                        <img src="./assets/images/beluga-whale.png" class="whale-stamp">               
-
-                                        <div class="row ">
-                                            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 line-right">
-                                                <div class="box">
-                                                    <div class = "letter"  >
-                                                        <form action="#" method="post" class="message_form" @submit="cancel()">
-                                                        <div class="form-group">
-                                                            <textarea id="form_message" name="message" placeholder="Your Message" rows="4" required="required"
-                                                                data-error="Please, leave us a message." v-model="addressData.message"></textarea>
-                                                            <div class="help-block with-errors"></div>
-                                                        </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12" style="padding-top:15%;">
-                                                <div class="row">
-                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
-                                                        <div class="box address">
-                                                            <div class="form-group address">
-                                                                <input id="form_name" type="text" name="name" placeholder="Your Name" required="required"
-                                                                    data-error="Name is required." v-model="addressData.name">
-                                                                <div class="help-block with-errors"></div>
-                                                            </div>
-                                                            <div class="form-group address">
-                                                                <input id="form_email" type="email" name="email" placeholder="Your Email" required="required"
-                                                                    data-error="Valid email is required." v-model="addressData.email">
-                                                                <div class="help-block with-errors"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xs-12 col-md-12 col-lg-12 text-center">
-                                                        <div class="box">
-                                                                <div class="social mt-4">
-                                                                        <a href="https://www.facebook.com/SymphonyEco">
-                                                                            <i style="color:black;" class="fab fa-facebook fa-3x"></i>
-                                                                        </a>
-                                                                        <a href="https://www.instagram.com/symphony.eco/">
-                                                                            <i style="color:black;" class="fab fa-instagram fa-3x"></i>
-                                                                        </a>
-                                                                        <a href="https://twitter.com/SymphonyEco">
-                                                                            <i style="color:black;" class="fab fa-twitter-square fa-3x"></i>
-                                                                        </a>
-                                                                </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xs-12 col-md-12 col-lg-12 text-center mt-3">
-                                                        <div class="row">
-                                                            <div class="form-group">
-                                                                <div class="g-recaptcha" data-sitekey="6Lc2_MsUAAAAAIB2mOVb_l42e4WeVVnIvcbVF48O" data-callback="verifyRecaptchaCallback" data-expired-callback="expiredRecaptchaCallback"></div>
-                                                                <input class="form-control d-none" data-recaptcha="true" required data-error="Please complete the Captcha">
-                                                                <div class="help-block with-errors"></div>
-                                                            </div>
-                                                            <div class="col-xs-12 col-md-12 col-lg-8 text-center">
-                                                                <div class="box"></div>
-                                                                <div><input type="submit" class="btn btn-success btn-send" value="Send message"></div>
-                                                                
-                                                            </div>
-                                                            <div class="col-xs-12 col-md-12 col-lg-4 text-center">
-                                                                <div class="box"></div>
-                                                                <div class="cancel"><span @click="cancel()">Cancel</span></div>
-                                                                </div>
-                                                            <div class="w-100"></div>
-                                                            <div class="col-xs-12 col-md-12 col-lg-11">
-                                                                <div class="box"></div>
-                                                                <p class="text-muted" style="margin-top: 5px;">
-                                                                    <strong>*</strong> These fields are required. Contact form template by
-                                                                    <a href="https://bootstrapious.com/p/bootstrap-recaptcha" target="_blank">Bootstrapious</a>.
-                                                                </p>                                                                      </div>                                                                    
-                                                            </div>
-                                                        </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                        </form>
+<div class="form-content">
+        <section class="grid-wrap">
+            <div class="row justify-content-center text-center">
+            <div class="col-12">
+                <h6 class="section-caption">Let's start</h6>
+                <h1>how can we <br>help you?</h1>
+            </div>
+            </div>
+                    
+            <div class="option-wrap">
+            <div class="row justify-content-center text-center">
+                <div class="col-6 col-sm-4 link js-show-section" data-form="website">
+                <figure class="form-icon">
+                    <img src="img/form/icon-website.svg" alt="Website">
+                </figure>
+                <h3>Website</h3>
+                </div>
+                <div class="col-6 col-sm-4 col-sm-offset-0 link js-show-section" data-form="marketing">
+                <figure class="form-icon">
+                    <img src="img/form/icon-ecommerce.svg" alt="Ecommerce">
+                </figure>
+                <h3>Communication</h3>
+                </div>
+                <div class="col-6 col-sm-4 link js-show-section" data-form="brand">
+                <figure class="form-icon">
+                    <img src="img/form/icon-brand.svg" alt="Brand">
+                </figure>
+                <h3>Fundraising</h3>
+                </div>
+                <div class="col-6 col-sm-4 col-sm-offset-0 link js-show-section" data-form="brand">
+                    <figure class="form-icon">
+                        <img src="img/form/icon-brand.svg" alt="Brand">
+                    </figure>
+                    <h3>Volunteer Management</h3>
+                </div>
+                <div class="col-6 col-sm-4 link js-show-section" data-form="brand">
+                    <figure class="form-icon">
+                        <img src="img/form/icon-brand.svg" alt="Brand">
+                    </figure>
+                    <h3>Process Optimization</h3>
+                </div>
+                <div class="col-6 col-sm-4 col-sm-offset-0 link js-show-sectio" data-form="chat">
+                <figure class="form-icon">
+                    <img src="img/form/icon-chat.svg" alt="Chat">
+                </figure>
+                <h3>Just Chat :)</h3>
+                </div>
+            </div>
+            </div>
+        </section>
+        </div>
+<section class="main-type" id="website">
+        <div class="grid-wrap">
+          <nav class="form-pager form-pager-3">
+            <ul>
+              <li><a href="#website-step-1" data-anchor="website-step-1" class="active">01</a></li>
+              <li><a href="#website-step-2" data-anchor="website-step-2" class="">02</a></li>
+              <li><a href="#website-step-3" data-anchor="website-step-3" class="">03</a></li>
+              <li><a href="#website-step-4" data-anchor="website-step-4" class="">04</a></li>
+            </ul>
+          </nav>
+          <form action="" method="post" id="form-3" class="has-validation-callback">
+            <div id="website-step-1" class="step step-1">
+              <div class="offset-top-sm">
+                <div class="row justify-content-center text-center">
+                  <div class="col-sm-9 col-md-7">
+                    <div class="step-number"><strong>01</strong> — 04</div>
+                    <h2>what do <br>you need?</h2>
+                  </div>
+                </div>
+                <div class="hidden">
+                  <input name="main-category" type="hidden" class="js-form-link-main-data" value="website">
+                </div>
+                <div class="option-wrap">
+                  <div class="row justify-content-center text-center">
+                    <div class="col-6 col-sm-3 col-sm-offset-0 js-form-link" data-anchor="website-step-2">
+                      <figure class="form-icon">
+                        <img src="img/form/icon-web-design.svg" alt="Web design">
+                      </figure>
+                      <h3 class="text-center">Web design</h3>
                     </div>
+
+                    <div class="col-6 col-sm-3 col-sm-offset-0 js-form-link" data-anchor="website-step-2">
+                      <figure class="form-icon">
+                        <img src="img/form/icon-web-code.svg" alt="Web decelopment">
+                      </figure>
+                      <h3 class="text-center">website Materials</h3>
+                    </div>
+
+                    <div class="col-6 col-sm-3 col-sm-offset-0 js-form-link" data-anchor="website-step-2">
+                      <figure class="form-icon">
+                        <img src="img/form/icon-web-both.svg" alt="Full service">
+                      </figure>
+                      <h3 class="text-center">Both</h3>
+                    </div>
+                    <input name="sub-category" type="hidden" class="js-form-link-data" value="
+                      
+                        
+                      
+                      Logo Design
+                    ">
+                  </div>
                 </div>
               </div>
             </div>
+            <!-- End of step 1 -->
+            <div id="website-step-2" class="step step-2">
+              <div class="offset-top-sm">
+                <div class="row justify-content-center text-center">
+                  <div class="col-12">
+                    <div class="step-number"><strong>02</strong> - 04</div>
+                    <h2>budget &amp;<br>timeline</h2>
+                    <div class="row justify-content-center text-center">
+                      <div class="col-10 col-sm-8 col-lg-6">
+                        <p class="small">Time is the most valuable non-renewable resource we have. This dictates how much time we can put forth to make dreams reality.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-wrap">
+                  <div class="row justify-content-center text-center">
+                    <div class="col-10 col-sm-8 col-lg-6">
+                      <div id="website-slider-budget" class="noUi-target noUi-ltr noUi-horizontal">
+                        </div>
+                      <p class="section-caption">Approximate budget</p>
+                      <input class="slider-input" name="slider-budget-input" type="text" id="website-slider-budget-input" readonly="">
+                    </div>
+                  </div>
+                  <div class="row justify-content-center text-center">
+                    <div class="col-10 col-sm-8 col-lg-6">
+                      <div id="website-slider-week" class="noUi-target noUi-ltr noUi-horizontal">
+                    </div>
+                      <p class="section-caption">Estimated timeline</p>
+                      <input class="slider-input" name="slider-week-input" type="text" id="website-slider-week-input" readonly="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End of step 2 -->
+
+            <div id="website-step-3" class="step step-3">
+              <div class="offset-top-sm">
+                <div class="row justify-content-center text-center">
+                  <div class="col-sm-9 col-md-7">
+                    <div class="step-number"><strong>03</strong> - 04</div>
+                    <h2>project <br>details</h2>
+                  </div>
+                </div>
+                <div class="form-wrap">
+                  <div class="row justify-content-center text-center">
+                    <div class="col-sm-10 col-md-8">
+                      <div class="row">
+                        <div class="col-sm-12 col-lg-6">
+                          <p>
+                            <input class="text-input" name="name" type="text" placeholder="Name *" data-validation="length required" data-validation-length="3-40" data-validation-error-msg="Name must be at least 3 characters">
+                          </p>
+                        </div>
+                        <div class="col-sm-12 col-lg-6">
+                          <p>
+                            <input class="text-input" name="email" type="email" placeholder="Email *" data-validation="email required" data-validation-error-msg="Please provide an accurate email address">
+                          </p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-12 col-lg-6">
+                          <input class="text-input" name="phone" type="text" placeholder="Phone">
+                        </div>
+                        <div class="col-sm-12 col-lg-6">
+                          <input class="text-input" name="company-name" type="text" placeholder="Company Name">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <input class="text-input" name="current-website-url" type="text" placeholder="Current website url">
+                        </div>
+                        <p>
+                          <input type="checkbox" name="contact_me_by_fax_only" value="1" style="display:none !important" tabindex="-1" autocomplete="false">
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End of step 3 -->
+
+            <div id="website-step-4" class="step step-4">
+              <div class="offset-top-sm">
+                <div class="row justify-content-center text-center">
+                  <div class="col-sm-9 col-md-7">
+                    <div class="step-number"><strong>04</strong> - 04</div>
+                    <h2>finish strong!</h2>
+                    <div class="row justify-content-center text-center">
+                      <div class="col-sm-12 col-md-10">
+                        <p class="small">If there are any pertinent details that you'd like to share, please drop a message in the box below.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-wrap">
+                  <div class="row justify-content-center text-center">
+                    <div class="col-sm-12 col-md-6">
+                      <textarea rows="4" cols="50" placeholder="Don't be shy..." name="additional-info"></textarea>
+                    </div>
+                  </div>
+<!--                   <div class="row justify-content-center text-center">
+                        <div class="col-sm-12 col-md-8 py-4">
+                            <div class="form-group">
+                                <div class="g-recaptcha" data-sitekey="6LcpaswUAAAAAGSHjxRD4KiA1QStQIrRGQTHCztm" data-callback="verifyRecaptchaCallback" data-expired-callback="expiredRecaptchaCallback"></div>
+                                <input class="form-control d-none" data-recaptcha="true" required data-error="Please complete the Captcha">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                      </div>
+                </div> -->
+                  <div class="row justify-content-center text-center">
+                    <div class="col-sm-8 col-sm-4 col-lg-3">
+                      <div class="submit-button-wrap">
+                        <input name="submit" class="submit-button" type="submit" value="SEND OVER">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End of step 4 -->
+
+          </form>
         </div>
-    </div>   
-  </div>              
- </section>
+      </section>
 <!--end of Header-->
 
  <!-- Bootstrap core JavaScript -->
  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+ <script src="https://unpkg.com/wnumb@1.1.0"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.0.3/nouislider.min.js"></script>
+ <script src='https://www.google.com/recaptcha/api.js'></script>
  <script src="./assets/validator.js"></script>
  <script src="./assets/contact.js"></script>
  <script src="./assets/custom.js"></script>
- <script id="rendered-js">
-    var vue = new Vue({
-      el: '#app',
-      data: {
-      formOpen: false,
-      addressData: {
-      name: '',
-      email: '',
-      message: ''} },
-
-
-      methods: {
-      resetForm: function () {
-      this.addressData = {
-        name: '',
-        email: '',
-        message: ''};
-      },
-      cancel: function () {
-      this.formOpen = false;
-      this.resetForm();
-      } } });
-          //# sourceURL=pen.js
-        </script>
 </body>
 </html>
