@@ -1,20 +1,20 @@
 <?php
 // require ReCaptcha class
-require('recaptcha-master/src/autoload.php');
+require('assets/recaptcha-master/src/autoload.php');
 
 // configure
 // an email address that will be in the From field of the email.
-$from = 'Demo contact form <demo@domain.com>';
+$from = 'symphonyeco@gmail.com';
 
 // an email address that will receive the email with the output of the form
-$sendTo = 'Demo contact form <demo@domain.com>';
+$sendTo = 'symphonyeco@gmail.com>';
 
 // subject of the email
 $subject = 'New message from contact form';
 
 // form field names and their translations.
 // array variable name => Text to appear in the email
-$fields = array('name' => 'Name', 'surname' => 'Surname', 'phone' => 'Phone', 'email' => 'Email', 'message' => 'Message');
+$fields = array('name' => 'Name', 'email' => 'Email', 'message' => 'Message');
 
 // message that will be displayed when everything is OK :)
 $okMessage = 'Contact form successfully submitted. Thank you, I will get back to you soon!';
@@ -23,7 +23,7 @@ $okMessage = 'Contact form successfully submitted. Thank you, I will get back to
 $errorMessage = 'There was an error while submitting the form. Please try again later';
 
 // ReCaptch Secret
-$recaptchaSecret = '6Lc2_MsUAAAAAGzHNBPIjeSPq2_KSBRzuG-peH2p';
+$recaptchaSecret = '6LcpaswUAAAAAJOwXpBL0IUF7BlaKD_OlLSKDnHM';
 
 // let's do the sending
 
@@ -36,21 +36,21 @@ try {
         // validate the ReCaptcha, if something is wrong, we throw an Exception,
         // i.e. code stops executing and goes to catch() block
         
-        if (!isset($_POST['g-recaptcha-response'])) {
+/*         if (!isset($_POST['g-recaptcha-response'])) {
             throw new \Exception('ReCaptcha is not set.');
-        }
+        } */
 
         // do not forget to enter your secret key from https://www.google.com/recaptcha/admin
         
-        $recaptcha = new \ReCaptcha\ReCaptcha($recaptchaSecret, new \ReCaptcha\RequestMethod\CurlPost());
+        //$recaptcha = new \ReCaptcha\ReCaptcha($recaptchaSecret, new \ReCaptcha\RequestMethod\CurlPost());
         
         // we validate the ReCaptcha field together with the user's IP address
         
-        $response = $recaptcha->verify($_POST['g-recaptcha-response'], $_SERVER['REMOTE_ADDR']);
+/*         $response = $recaptcha->verify($_POST['g-recaptcha-response'], $_SERVER['REMOTE_ADDR']);
 
         if (!$response->isSuccess()) {
             throw new \Exception('ReCaptcha was not validated.');
-        }
+        } */
         
         // everything went well, we can compose the message, as usually
         
