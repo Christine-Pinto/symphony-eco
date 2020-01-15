@@ -3,8 +3,8 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  animation: rotateHue infinite 28s linear;
-  animation-delay: 0.875s; }
+  animation: rotateHue infinite 20s linear;
+  animation-delay: 0.625s; }
 @keyframes rotateHue {
   0% {
     filter: hue-rotate(0deg); }
@@ -32,7 +32,7 @@
     top: calc(50% - 75vmax);
     pointer-events: none;
     z-index: 2;
-    animation: rotateFrame 14s linear infinite; }
+    animation: rotateFrame 10s linear infinite; }
 @keyframes rotateFrame {
   0% {
     transform: rotate(0deg); }
@@ -49,7 +49,7 @@
       pointer-events: auto; }
     .untitled__shutters:before {
       bottom: 50%;
-      animation: openTop 7s infinite; }
+      animation: openTop 5s infinite; }
 @keyframes openTop {
   0% {
     transform: translate3d(-50%, 0, 0);
@@ -65,7 +65,7 @@
     animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.335); } }
     .untitled__shutters:after {
       top: 50%;
-      animation: openBottom 7s infinite; }
+      animation: openBottom 5s infinite; }
 @keyframes openBottom {
   0% {
     transform: translate3d(-50%, 0, 0);
@@ -91,7 +91,7 @@
     height: 100%;
     width: 100%;
     opacity: 0;
-    animation: showHideSlide infinite 28s steps(1); }
+    animation: showHideSlide infinite 20s steps(1); }
 @keyframes showHideSlide {
   0% {
     opacity: 1;
@@ -110,15 +110,15 @@
       .untitled__slide:nth-child(1) .untitled__slideBg {
         background-image: url(https://source.unsplash.com/collection/9270950/1200x600); }
     .untitled__slide:nth-child(2) {
-      animation-delay: 7s; } 
+      animation-delay: 5s; } 
       .untitled__slide:nth-child(2) .untitled__slideBg {
         background-image: url(https://source.unsplash.com/collection/9270972/1200x600); }
     .untitled__slide:nth-child(3) {
-      animation-delay: 14s; }
+      animation-delay: 10s; }
       .untitled__slide:nth-child(3) .untitled__slideBg {
         background-image: url(https://source.unsplash.com/collection/9270985/1200x600); }
     .untitled__slide:nth-child(4) {
-      animation-delay: 21s; }
+      animation-delay: 15s; }
       .untitled__slide:nth-child(4) .untitled__slideBg {
         background-image: url(https://source.unsplash.com/collection/9270998/1200x600); }
   .untitled__slideBg {
@@ -133,7 +133,7 @@
     background-blend-mode: hard-light;
     opacity: 1;
     z-index: -1;
-    animation: bgInOut 7s infinite; }
+    animation: bgInOut 5s infinite; }
 @keyframes bgInOut {
   0% {
     transform: rotate(-45deg) scale(1.1);

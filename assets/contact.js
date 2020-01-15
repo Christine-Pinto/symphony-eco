@@ -7,7 +7,13 @@ $(function () {
     window.expiredRecaptchaCallback = function () {
         $('input[data-recaptcha]').val("").trigger('change');
     } */
-
+    $('#form-3').validator();
+    $('#form-3').on('submit', function (e) {
+      console.log("ContactForm");
+      console.log($(this).serialize());
+      return false;
+    });
+   
     $('#contact-form').validator();
 
     $('#contact-form').on('submit', function (e) {
@@ -89,23 +95,30 @@ const FloatLabel = (() => {
     websiteBudgetSliderInput = document.getElementById('website-slider-budget-input');
     
     noUiSlider.create(websiteBudgetSlider, {
-    start: [5],
+    start: [0],
     connect: true,
     range: {
-      'min': [5],
-      'max': [85]
+      'min': [0],
+      'max': [5]
     },
-    step: 10,
+    step: 1,
     format: wNumb({
     decimals: 0,
-      prefix: '$',
+    prefix: '$',
     suffix: 'k',
     })
     });
     
     websiteBudgetSlider.noUiSlider.on('update', function ( values, handle, unencoded, isTap, positions ) {
-    var secondValue = parseInt(unencoded) + parseInt(10);
-    websiteBudgetSliderInput.value = values + ' - ' + secondValue + 'k';
+    var secondValue = parseInt(unencoded) + parseInt(1);
+    if (parseInt(unencoded) < 1) {
+        websiteBudgetSliderInput.value = '< $1k';
+    } else if (parseInt(unencoded) > 4) {
+       websiteBudgetSliderInput.value = '> $5k';
+    }
+    else {
+      websiteBudgetSliderInput.value = values + ' - ' + secondValue + 'k' ;
+    }
     });
     
     //website WEEKS SLIDER
@@ -114,11 +127,11 @@ const FloatLabel = (() => {
     
     
     noUiSlider.create(websiteWeekSlider, {
-      start: [4],
+      start: [3],
       connect: true,
       range: {
-          'min': 4,
-          'max': 50
+          'min': 3,
+          'max': 13
       },
       step: 1,
       format: wNumb({
@@ -127,7 +140,7 @@ const FloatLabel = (() => {
     })
     });
     
-    websiteWeekSlider.noUiSlider.on('update', function( values, handle ) {
+    websiteWeekSlider.noUiSlider.on('update', function( values, handle , unencoded) {
       var value = values[handle];
     
       if ( handle ) {
@@ -135,12 +148,60 @@ const FloatLabel = (() => {
       }else{
         websiteWeekInput.value = value;
       }
+
+      if (parseInt(unencoded) < 4) {
+        websiteWeekInput.value = '< 4 weeks';
+      } else if (parseInt(unencoded) > 12) {
+        websiteWeekInput.value = '> 12 weeks';
+      }
     });
     
     websiteWeekInput.addEventListener('change', function(){
       websiteWeekSlider.noUiSlider.set([null, this.value]);
     });
+
+  //FORM VALIDATION AND SUBMIT
+
+  $.validate({
+    /*     modules : 'security',
+        onError : function($form) {
+          $('html, body').animate({
+            scrollTop: $('.form-error').offset().top
+          }, 500);
+        },
+        onSuccess :  */function($form) {
+          if(($form).attr('id') !== 'form-4'){
+            console.log("ContactForm != 4");
+            console.log($(this).serialize());
+    /*           $.ajax({
+                type: "POST",
+                url: "email.php",
+                data: $form.serialize(),
+                success: function(){
+                  $('.js-form-response').addClass('sent');
+                  $('.js-form-response').html('<h2>Hoooray!</h2> <p>It is a pleasure to meet ya! Give us a day and we will schedule our first date.</p><a class="bs-button btn-small" data-linkName="go home" href="/"><span data-hover="go home">go home</span></a><h6>Check out our creative channels</h6><ul class="social"><li class="dribbble"><a href="https://dribbble.com/Buzzworthy" target="_blank"><span>Dribbble</span><img src="img/social/social-dribbble-loop.gif" alt="Dribbble"></a><li><li class="behance"><a href="https://www.behance.net/BuzzworthyStudio" target="_blank"><span>Behance</span><img src="img/social/social-behance-loop.gif" alt="Behance"></a><li><li class="instagram"><a href="https://www.instagram.com/buzzworthy.studio/" target="_blank"><span>instagram</span><img src="img/social/social-instagram-loop.gif" alt="Instagram"></a><li></ul>');
+                }
+            }); */
+          }else{
+            console.log("ContactForm != 4");
+            console.log($(this).serialize());
+    /*         $.ajax({
+              type: "POST",
+              url: "email_chat.php",
+              data: $form.serialize(),
+              success: function(){
+                $('.js-form-response').addClass('sent');
+                $('.js-form-response').html('<h2>Hoooray!</h2> <p>It is a pleasure to meet ya! Give us a day and we will schedule our first date.</p><a class="bs-button btn-small" data-linkName="go home" href="/"><span data-hover="go home">go home</span></a><h6>Check out our creative channels</h6><ul class="social"><li class="dribbble"><a href="https://dribbble.com/Buzzworthy" target="_blank"><span>Dribbble</span><img src="img/social/social-dribbble-loop.gif" alt="Dribbble"></a><li><li class="behance"><a href="https://www.behance.net/BuzzworthyStudio" target="_blank"><span>Behance</span><img src="img/social/social-behance-loop.gif" alt="Behance"></a><li><li class="instagram"><a href="https://www.instagram.com/buzzworthy.studio/" target="_blank"><span>instagram</span><img src="img/social/social-instagram-loop.gif" alt="Instagram"></a><li></ul>');
+              }
+            }); */
+          }
+        },
+      });
+
+
     });
+
+
     
       // FORM PAGER HIGLIGHTING ITEM
       $(document).on("scroll", onScroll);
@@ -182,8 +243,8 @@ const FloatLabel = (() => {
     
       // toggle select input list 
       $('.js-form-link').click(function () {
-        $('.js-form-link').removeClass("selected");
-        $(this).addClass("selected");
+        //$('.js-form-link').toggleClass("selected");
+        $(this).toggleClass("selected");
       });
       $('.js-show-section').click(function () {
         $('.js-show-section').removeClass("selected");
@@ -191,7 +252,7 @@ const FloatLabel = (() => {
       });
     
       //SCROLL TO ANCHOR
-      $(".js-form-link").on('click', function (event) {
+      $(".js-form-nextStep").on('click', function (event) {
         event.preventDefault();
         var $anchorValue = $(this).data("anchor");
     
@@ -216,7 +277,17 @@ const FloatLabel = (() => {
           }, 600, "easeInOutQuart");
         });
       });
-    
+
+      //INSERT SELECTED VALUES IN FORM AS SUB-CATEGORY TYPE
+      $('.js-form-link').click(function(){
+        var subCategory =""
+        $('.js-form-link.selected').each(function(index, obj)
+        {
+          subCategory = subCategory.concat($(this).text().trim())+",";
+        });
+        $(this).parent().parent().find('.js-form-link-data').val(subCategory);
+      });
+
     ////// CUSTOM EASINGS 
     $.easing.jswing = $.easing.swing;
      
@@ -351,3 +422,10 @@ const FloatLabel = (() => {
             return $.easing.easeOutBounce (x, t*2-d, 0, c, d) * .5 + c*.5 + b;
         }
     });
+
+
+
+
+     
+
+        

@@ -149,7 +149,7 @@ figure {
   height: 100%;
 }
 
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 992px) {
 .step {
     margin-top: 20vh;
 }
@@ -189,7 +189,7 @@ p.section-caption {
   margin: 3em 0 0;
   text-transform: uppercase;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width:  992px) {
 
   .form-pager {
     display: block;
@@ -325,6 +325,7 @@ textarea {
 textarea {
   overflow: auto;
   vertical-align: top;
+  margin: 0 0 1.5rem;
 }
 
 .submit-button-wrap {
@@ -354,7 +355,7 @@ textarea {
   background-color: #D6372E;
   color: #fff;
   padding: 0;
-  font-size: .7em;
+  font-size: .7rem;
   font-weight: 600;
   letter-spacing: .15em;
   width: 80%;
@@ -378,6 +379,12 @@ textarea {
   /* height: 92.5vh; */
 }
 
+
+#contactForm h3{
+  font-size: 0.8rem;
+  margin-bottom: 2rem;
+}
+
 section.main-type {
   padding-bottom: 5vh;
   
@@ -387,4 +394,12 @@ section.main-type {
 
 section.main-type .offset-top-sm {
   padding-top: 7.5vh!important;
+}
+
+.help-block.with-errors {
+  display: block;
+  margin-top: -1rem;
+  text-align: left;
+  font-size: .6rem;
+  color: #D6372E;
 }

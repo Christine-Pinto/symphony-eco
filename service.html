@@ -10,138 +10,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:image" content="assets/images/wordcloud.png"/>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/flexslider.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./assets/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/fontawesome-free-5.10.1-web/css/all.css">
-    <link href="./assets/style/overview-slider.css" rel="stylesheet">
-    <link href="./assets/custom.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./assets/style/nav.css" />
+    <link rel="stylesheet" type="text/css"  href="./assets/contact.css" >
+    <link rel="stylesheet" type="text/css"  href="./assets/style/service.css">
+    <link rel="stylesheet" type="text/css"  href="./assets/custom.css">
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg fixed-top custom-nav" id="navbar">
-        <div class="container">
-            <a class="navbar-brand logo" href="index.html">
-                <!-- space for logo -->
-            </a>
-            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fas fa-bars mdi mdi-menu"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item ">
-                        <a href="index.html#" class="nav-link">
-                        <i  class="fas fa-igloo fa-1x pr-2"></i>
-                        Home
+<body class="navStyle blue-gradient-bg">
+    <main class="main main--navStyle">
+        <div class="content content--navStyle">
+          <div class="hamburger hamburger--navStyle js-hover sticky">
+            <div class="hamburger__line hamburger__line--01">
+              <div class="hamburger__line-in hamburger__line-in--01"></div>
+            </div>
+            <div class="hamburger__line hamburger__line--02">
+              <div class="hamburger__line-in hamburger__line-in--02"></div>
+            </div>
+            <div class="hamburger__line hamburger__line--03">
+              <div class="hamburger__line-in hamburger__line-in--03"></div>
+            </div>
+            <div class="hamburger__line hamburger__line--cross01">
+              <div class="hamburger__line-in hamburger__line-in--cross01"></div>
+            </div>
+            <div class="hamburger__line hamburger__line--cross02">
+              <div class="hamburger__line-in hamburger__line-in--cross02"></div>
+            </div>
+          </div>
+        <section class="service p-4">
+            <div class="form-content">
+                <section class="grid-wrap">    
+                    <div class="option-wrap">
+                    <div class="row justify-content-center text-center">
+                        <div class="col-6 col-md-4 col-md-offset-0 link js-show-section" data-form="marketing">
+                            <a href="socialmedia.html" target="/" style="color:white;text-decoration: none;">
+                            <figure class="form-icon">
+                                <img src="img/form/icon-ecommerce.svg" alt="Ecommerce">
+                            </figure>
                         </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="about.html#"  class="nav-link">
-                            <i  class="fas fa-id-card-alt fa-1x pr-2"></i>  
-                            About
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="service.html#"  class="nav-link">
-                            <i  class="fas fa-tools fa-1x pr-2"></i>  
-                            Services
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="blog.html#"  class="nav-link">
-                            <i class="fas fa-blog fa-1x pr-2"></i>  
-                            Blog
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="contact.html#" class="nav-link">
-                            <i class="fas fa-paper-plane fa-1x pr-2"></i> 
-                            Contact
-                        </a>
-                    </li>
-                </ul>
+                            <h3>Operations</h3>
+                        </div>
+                        <div class="col-6 col-md-4 link js-show-section" data-form="website">
+                            <figure class="form-icon">
+                                <img src="img/form/icon-website.svg" alt="Website">
+                            </figure>
+                            <h3>Marketing</h3>
+                        </div>
+                        <div class="col-6 col-md-4 col-md-offset-0 link js-show-section" data-form="marketing">
+                            <figure class="form-icon">
+                                <img src="img/form/icon-ecommerce.svg" alt="Ecommerce">
+                            </figure>
+                            <h3>Operations</h3>
+                        </div>
+                        <div class="col-6 col-md-4 link js-show-section" data-form="brand">
+                            <figure class="form-icon">
+                                <img src="img/form/icon-brand.svg" alt="Brand">
+                            </figure>
+                            <h3>Finance</h3>
+                        </div>
+                        <div class="col-6 col-md-4 col-md-offset-0 link js-show-section" data-form="brand">
+                            <figure class="form-icon">
+                                <img src="img/form/icon-brand.svg" alt="Brand">
+                            </figure>
+                            <h3>HR</h3>
+                        </div>
+                        <div class="col-6 col-md-4 col-md-offset-0 link js-show-section" data-form="brand">
+                            <figure class="form-icon">
+                                <img src="img/form/icon-brand.svg" alt="Brand">
+                            </figure>
+                            <h3>HR</h3>
+                        </div>
+                    </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+        <div class="global-menu">
+            <div class="global-menu__wrap">
+                <a class="global-menu__item global-menu__item--navStyle" href="index.html#" >
+                    Home
+                </a>
+                <a class="global-menu__item global-menu__item--navStyle" href="about.html">
+                    Who we are
+                </a>
+                <a class="global-menu__item global-menu__item--navStyle" href="service.html">
+                    Services</a>
+                <a class="global-menu__item global-menu__item--navStyle" href="#">
+                    Blog</a>
+                <a class="global-menu__item global-menu__item--navStyle" href="contact.html">
+                    Contact</a>
             </div>
         </div>
-    </nav>
-<section class=" section-padding" id="">
-        <div class="slider__warpper">
-                <div class="flex__container flex--pikachu flex--active" data-slide="1">
-                  <div class="flex__item flex__item--left">
-                        <a href="socialmedia.html" target="/" style="color:white;text-decoration: none;"><div class="flex__content">
-                      <p class="text--sub">Pokemon Gen I</p>
-                      <h1 class="text--big"> Online Communication</h1>
-                      <p class="text--normal">Pikachu is an Electric-type Pokémon introduced in Generation I. Pikachu are small, chubby, and incredibly cute mouse-like Pokémon. They are almost completely covered by yellow fur.</p>
-                    
-                    </div></a>
-                    <p class="text__background">Online Communication</p>
-                  </div>
-                  <div class="flex__item flex__item--right"></div>
-                  <img class="service__img" src="" />
-                </div>
-                <div class="flex__container flex--piplup animate--start" data-slide="2">
-                  <div class="flex__item flex__item--left">
-                    <div class="flex__content">
-                      <p class="text--sub">Pokemon Gen IV</p>
-                      <h1 class="text--big">Volunteer Management</h1>
-                      <p class="text--normal">Piplup is the Water-type Starter Pokémon of the Sinnoh region. It was introduced in Generation IV. Piplup has a strong sense of self-esteem. It seldom accepts food that people give because of its pride.</p>
-                    </div>
-                    <p class="text__background">Volunteer Management</p>
-                  </div>
-                  <div class="flex__item flex__item--right"></div>
-                  <img class="service__img" src="data:imahjjc2oLmuOADxyuOuBOlwPSTa3hu2cRrmvMCMl1vdXtW3+5qOJfTE0ycXNHITm4XeZBzglXuAxzsfLs37P1KLH4BVrmV7d16HRTO/gBy69Skxv5HlSZNo3OGDdfbFJvt85xb/TFWxUibO8bw7LTNCLNx3rWenUoDZ3m3uOI0zy80As3NvBxOn2QCI3MSebTqEjkz+r5QCN0XtOLtPfBIuscn1fOOGKARO7gR1AREQH//2Q==" />
-                </div>
-                <div class="flex__container flex--blaziken animate--start" data-slide="3">
-                  <div class="flex__item flex__item--left">
-                    <div class="flex__content">
-                      <p class="text--sub">Pokemon Gen III</p>
-                      <h1 class="text--big">Fundraising Strategies</h1>
-                      <p class="text--normal">Blaziken is the Fire/Fighting-type Starter Pokémon of the Hoenn region, introduced in Generation III. Blaziken is a large, bipedal, humanoid bird-like Pokémon that resembles a rooster.</p>
-                    </div>
-                    <p class="text__background">Fundraising Strategies</p>
-                  </div>
-                  <div class="flex__item flex__item--right"></div>
-                  <img class="service__img" src="https://s4.postimg.org/6795hnlql/blaziken.png" />
-                </div>
-                <div class="flex__container flex--dialga animate--start" data-slide="4">
-                  <div class="flex__item flex__item--left">
-                    <div class="flex__content">
-                      <p class="text--sub">Pokemon Gen IV</p>
-                      <h1 class="text--big">Web Design</h1>
-                      <p class="text--normal">Dialga is a Steel/Dragon-type Legendary Pokémon. Dialga is a sauropod-like Pokémon. It is mainly blue with some gray, metallic portions, such as its chest plate, which has a diamond in the center. It also has various, light blue lines all over
-                        its body.</p>
-                    </div>
-                    <p class="text__background">Web Design</p>
-                  </div>
-                  <div class="flex__item flex__item--right"></div>
-                  <img class="service__img" src="https://s4.postimg.org/43yq9zlxp/dialga.png" />
-                </div>
-                <div class="flex__container flex--zekrom animate--start" data-slide="5">
-                  <div class="flex__item flex__item--left">
-                    <div class="flex__content">
-                      <p class="text--sub">Pokemon Gen V</p>
-                      <h1 class="text--big">Process Optimization</h1>
-                      <p class="text--normal">Zekrom is a Dragon/Electric-type Legendary Pokémon. It is part of the Tao Trio, along with Reshiram and Kyurem. Zekrom is a large, black draconian Pokémon that seems to share its theme with its counterpart, Reshiram. It has piercing red eyes and
-                        dark gray to black skin that seems to be armor-like.</p>
-                    </div>
-                    <p class="text__background">Process Optimization</p>
-                  </div>
-                  <div class="flex__item flex__item--right"></div>
-                  <img class="service__img" src="https://s4.postimg.org/malmhgn9p/zekrom.png" />
-                </div>
-              </div>
-              
-              <div class="slider__navi">
-                <a href="#" class="slide-nav active" data-slide="1">pikachu</a>
-                <a href="#" class="slide-nav" data-slide="2">piplup</a>
-                <a href="#" class="slide-nav" data-slide="3">blaziken</a>
-                <a href="#" class="slide-nav" data-slide="4">dialga</a>
-                <a href="#" class="slide-nav" data-slide="5">zekrom</a>
-              </div>
-</section>
-<!--end of Service Section-->
+          <svg class="shape-overlays" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path class="shape-overlays__path"></path>
+            <path class="shape-overlays__path"></path>
+            <path class="shape-overlays__path"></path>
+          </svg>
+        </div>
+    </main>
 
 
  <!-- Bootstrap core JavaScript -->
- <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+ <script src="./assets/js/easing.js"></script>
+ <script src="./assets/js/nav.js"></script>
  <script src="./assets/custom.js"></script>
 
 </body>

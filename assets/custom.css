@@ -25,7 +25,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
+  font-size: 1em;
   font: inherit;
   vertical-align: baseline;
   font-family: 'Montserrat', sans-serif;
@@ -182,12 +182,68 @@ button {
 }
 
 .nav-item i {
-  display: none;
+  display: inline;
+  color: #495057;
 }
+
+
+@keyframes checked-anim {
+  0% {
+    width: 0%;
+    height: 0%;
+    border-bottom-right-radius: 100%;
+  }
+  50% {
+      width: 3000px;
+      height: 3000px;
+  }
+  100% {
+      width: 100%;
+      height: 100%;
+      border-radius: 0;
+
+  }
+}
+
+@keyframes not-checked-anim {
+  0% {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+  50% {
+    width: 3000px;
+    height: 3000px;
+}
+  100% {
+    width: 0%;
+    height: 0%;
+    
+}
+}
+
+.custom-nav {
+  width: 100%;
+  border-radius: 0px;
+  z-index: 999;
+  margin-bottom: 0px;
+  background-color: transparent;
+  position: absolute;
+  margin-top: 0px;
+  padding: 10px 0px !important;
+}
+
+.navbar-nav {
+  transition-delay: 15s;
+}
+
 
 .nav-item a {
   position: relative;
   text-decoration: none;
+  animation-delay: 5s;
+  
+
  }
   .nav-item a::after {
     content: '';
@@ -199,44 +255,18 @@ button {
     width: 100%;
     height: 1px;
     background-color: rgba(255, 255, 255, 0.8);
-    transition: transform 250ms; }
+    }
   .nav-item a:hover::after {
     transform: translateX(-50%) scaleX(1); }
 
-@media (max-width: 768px) {
-  .custom-nav {
-    margin-top: 0px;
-    padding: 10px 0px !important;
-    background-color: #212529 !important;
-}
-  .custom-nav .navbar-nav li a i {
-    display: inline;
-    color: #495057;
-  }
-
-  .custom-nav .navbar-nav li a {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-
-}
-
-.custom-nav {
-  padding: 12px 0px;
-  width: 100%;
-  border-radius: 0px;
-  z-index: 999;
-  margin-bottom: 0px;
-  transition: all 0.5s ease-in-out;
-  background-color: transparent;
-  position: absolute;
-}
-
 .custom-nav .navbar-nav li a {
-  margin: 0 7px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  font-size: 2rem;
 }
+
 
 .navbar-toggler {
   font-size: 24px;
@@ -248,15 +278,50 @@ button {
 
 .sticky {
   position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(0,0,0,.5);
+/*   top: 0;
+  width: 100%; */
 }
+
+#overlay:not(blurroverlay) {
+  position: fixed;
+
+  animation: not-checked-anim .2s both;
+  background-color: blue;
+  
+}
+
+#overlay.blurroverlay {
+  position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;	
+	bottom: 0;
+  background-color: blue;
+  border-bottom-right-radius: 100%;
+	opacity: .5;
+  z-index: 1;
+  animation: checked-anim 1s ease both;
+}
+
+
+
+
+.blur {
+  filter: blur(8px); 
+}
+
+
+.hide {
+  display: none;
+}
+
+
+
 
 /* NavBar  End*/
 
 #home {
-  height: 70%;
+  height: 70vh;
   background:  linear-gradient(#e1e3eb, white); 
 }
 
@@ -335,7 +400,7 @@ button {
 
 /* Footer */
 .footer-link {
-  margin-top: 1%;
+  margin-top: 3%;
   padding-left: 1rem;
 }
 
@@ -371,6 +436,8 @@ button {
 .blue-gradient-bg {
   background:  linear-gradient(#e1e3eb, white); 
   color: black;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .overlay {

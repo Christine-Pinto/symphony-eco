@@ -1,6 +1,6 @@
-window.onscroll = function() {scrollFunction()};
+/*window.onscroll = function() {scrollFunction()};
 
-var navbar = document.getElementById("navbar");
+ var navbar = document.getElementById("navbar");
 var sticky = navbar.offsetTop + 100;
 
 function scrollFunction() {
@@ -10,10 +10,10 @@ function scrollFunction() {
     navbar.classList.remove("sticky");
   }
 }
-
+ */
 
 // Service Overview Slider
-$(document).ready(function() {
+/* $(document).ready(function() {
 
   var $slider = $(".slider__warpper"),
   curSlide = 1,
@@ -80,4 +80,16 @@ setInterval(function() {
 
 ;
 
+}); */
+
+/* $('.navbar-toggler').on('click', function(e) {
+  if($('#navbarCollapse').hasClass('show')) {
+    $('#wrapper').removeClass('blur');
+    $('#overlay').removeClass('blurroverlay');
+  }
+  else {
+    $('#wrapper').addClass('blur');
+    $('#overlay').addClass('blurroverlay');
+  }
 });
+ */
