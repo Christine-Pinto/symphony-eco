@@ -315,6 +315,10 @@ button {
   display: none;
 }
 
+.visuallyhidden {
+  opacity: 0;
+}
+
 
 
 

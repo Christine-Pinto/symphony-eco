@@ -38,14 +38,23 @@ class ShapeOverlays {
     this.elm.classList.add('is-opened');
     this.timeStart = Date.now();
     this.renderLoop();
-    // $('#canv').addClass('hide');
+    if(document.getElementById("canv")){
+      $('#canv').addClass('hide');
+      $('#canv').addClass('visuallyhidden');
+    } 
+
   }
   close() {
     this.isOpened = false;
     this.elm.classList.remove('is-opened');
     this.timeStart = Date.now();
     this.renderLoop();
-    // $('#canv').removeClass('hide');
+    if(document.getElementById("canv")){
+      $('#canv').removeClass('hide');
+      setTimeout(function () {
+        $('#canv').removeClass('visuallyhidden');
+      }, 450);
+    } 
   }
   updatePath(time) {
     const points = [];
