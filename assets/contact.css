@@ -28,7 +28,7 @@
   -moz-transition: all 350ms cubic-bezier(0.77, 0, 0.175, 1);
   -o-transition: all 350ms cubic-bezier(0.77, 0, 0.175, 1);
   border-radius: 50%;
-  background: #D6372E;
+  background: #85B3D1FF;
   cursor: pointer;
   -webkit-box-shadow: 0 7px 18px 0px rgba(0, 0, 0, 0.15);
   box-shadow: 0 7px 18px 0px rgba(0, 0, 0, 0.15);
@@ -244,7 +244,7 @@ p.section-caption {
   top: 50%;
   left: 50%;
   border-radius: 50%;
-  background-color: #D6372E;
+  background-color: #85B3D1FF;
   z-index: -1;
 }
 .form-pager li a.active:before {
@@ -370,7 +370,7 @@ textarea {
   -webkit-transform: scale(0.8);
   -o-transform: scale(0.8);
   -ms-transform: scale(0.8);
-  background-color: #D6372E;
+  background-color: #85B3D1FF;
   background-size: 35% 35%;
 }
 
