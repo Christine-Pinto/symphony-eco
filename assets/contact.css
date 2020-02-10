@@ -95,7 +95,7 @@
 }
 
 .option-wrap {
-    margin-top: 8vh;
+    margin-top: 7vh;
 }
 
 figure {
@@ -118,10 +118,10 @@ figure {
   background-size: 0% 0%;
   position: relative;
   display: block;
-  width: 74%;
+  width: 68%;
   margin: 0 13% .75em;
   height: auto;
-  padding-top: 74%;
+  padding-top: 68%;
   border-radius: 50%;
   border: 1px solid #e4e7f5;
 }
