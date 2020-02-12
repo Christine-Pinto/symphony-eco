@@ -227,7 +227,7 @@ button {
 
 #home {
   height: 70vh;
-  background:  linear-gradient(#E0ebfa, white); 
+  /* background:  linear-gradient(#E0ebfa, white);  */
 }
 
 #socialMedia-header {
@@ -311,7 +311,7 @@ button {
 
 #footer {
   padding-bottom:1%;
-  background:  linear-gradient(white, #E0ebfa); 
+
 }
 
 #polyAnimal {
@@ -339,7 +339,7 @@ button {
 }
 
 .blue-gradient-bg {
-  background:  linear-gradient(#E0ebfa, white); 
+  background:  linear-gradient(175deg,hsla(0,0%,100%,0) 50%,#fff),linear-gradient(100deg,skyblue 50%,#fff);
   color: black;
   background-repeat: no-repeat;
   background-attachment: fixed;
