@@ -1,0 +1,1 @@
+$(".serviceSelect").on("click",function(){$(this).toggleClass("active");});
